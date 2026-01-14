@@ -7,7 +7,7 @@ function ContextProvider({children}) {
   const [isLoggedIn, setIsLoggedIn] = useState();
   const [username, setUsername] = useState();
 
-  const [page, setPage] = useState();
+  const [page, setPage] = useState(2);
   const [isLoading, setIsLoading] = useState();
 
   const [searchTerm, setSearchTerm] = useState("");
