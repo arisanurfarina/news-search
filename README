@@ -1,0 +1,32 @@
+
+FRONT-END
+1. npm install create-react-app -global
+2. npx create-react-app news-app
+3. cd news-app
+4. npm start
+5. npm install @mui/material @emotion/react @emotion/styled @mui/styled-engine-sc styled-components @mui/icons-material
+6. npm install react-router-dom
+7. npm install axios
+8. npm install @fontsource/roboto
+
+BACK-END
+1. npm init --y
+2. npm i --save json-server
+3. change the line in package.json: 
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      }
+  into
+      "scripts": {
+        "start": "json-server -p 3006 -w db.json"
+      }
+
+LOCAL STORAGE
+1. save data: localStorage.setItem(key, value);
+2. read data: localStorage.getItem(key);
+3. remove data: localStorage.removeItem(key);
+4. remove all: localStorage.clear();
+
+JAVASCRIPT JSON 
+1. convert from string to object: JSON.parse()
+2. convert into string: JSON.stringify()
