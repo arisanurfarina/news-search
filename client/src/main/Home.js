@@ -5,8 +5,6 @@ import Header from '../components/Header';
 import MyFavouritesPanel from '../components/MyFavouritesPanel';
 import DisplayResults from '../components/DisplayResults';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
 const Home = () => {
   const {isLoggedIn} = useUserContext();

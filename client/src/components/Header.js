@@ -9,7 +9,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Link from '@mui/material/Link';
 
 const Header = () => {
-  const {username, logout, page, setPage, searchTerm, setSearchTerm, setSearchResults, searchNews, resetSearch, setIsLoading} = useUserContext();
+  const {username, logout, setPage, searchTerm, setSearchTerm, setSearchResults, searchNews, resetSearch, setIsLoading} = useUserContext();
   const [errorMessage, setErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
 
