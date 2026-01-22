@@ -9,9 +9,10 @@ import Button from '@mui/material/Button';
 const DisplayResults = () => {
   const {isError, searchResults, searchTerm, searchNews, page, setPage, isLoading} = useUserContext();
 
-  function handleMoreSearch() {
+  async function handleMoreSearch() {
     setPage(prev => prev + 1);
-    searchNews({searchTerm, page});
+    const newPage = page + 1;
+    await searchNews({searchTerm, newPage});
   }
 
   const DisplayBox = ({content}) => {
@@ -23,7 +24,6 @@ const DisplayResults = () => {
   }
 
   const DisplayNewsItems = () => {
-    console.log(page);
     return (
       <Grid container direction="column" spacing={2} >
         <Grid container spacing={2} >

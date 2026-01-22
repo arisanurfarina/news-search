@@ -11,9 +11,9 @@ const MyFavouritesPanel = () => {
   const {myFavourites, clearAllFavourites} = useUserContext();
 
   const renderFavourites = myFavourites.map((favourite, index) => (
-    <Item className='fave-item' key={index}>
+    <Button key={index} variant="outlined" href={favourite.url} target="_blank" rel="noopener noreferrer" sx={{textTransform:"none", backgroundColor:"white", color:"black"}} >
       <Typography variant='body2'>{favourite.description}</Typography>
-    </Item>)
+    </Button>)
   );
 
   return (

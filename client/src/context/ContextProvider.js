@@ -7,7 +7,7 @@ function ContextProvider({children}) {
   const [isLoggedIn, setIsLoggedIn] = useState();
   const [username, setUsername] = useState();
 
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState();
   const [isLoading, setIsLoading] = useState();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,14 +38,9 @@ function ContextProvider({children}) {
     localStorage.setItem("isLoggedIn", false);
   }
 
-  const searchNews = async ({searchTerm, page}) => {
+  const searchNews = async ({searchTerm, newPage}) => {
     try {
-
-      const URL = 'https://newsapi.org/v2/everything';
-      const API = process.env.REACT_APP_NEWS_API_KEY;
-      const query = `${URL}?apiKey=${API}&q=${searchTerm}&searchIn=title&sortBy=popularity&language=en&pageSize=20&page=${page}`;      
-      const response =  await axios.get(query);
-
+      const response = await axios.get(`/api/news?searchTerm=${encodeURIComponent(searchTerm)}&newPage=${newPage}`);
       const articles = response.data.articles;
 
       if (articles.length > 0) {

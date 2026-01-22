@@ -13,7 +13,7 @@ const Header = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
 
-  function handleSearch() {
+  async function handleSearch() {
     if (searchTerm === "") {
       setErrorMessage("Search field cannot be empty.");
       setOpen(true);
@@ -23,7 +23,9 @@ const Header = () => {
     setIsLoading(true);
     setSearchResults([]);
     setPage(2);
-    searchNews({searchTerm, page});
+    const newPage = 2;
+
+    await searchNews({searchTerm, newPage});
   }
 
   function handleHome() {
