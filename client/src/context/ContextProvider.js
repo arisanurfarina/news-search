@@ -40,7 +40,11 @@ function ContextProvider({children}) {
 
   const searchNews = async ({searchTerm, newPage}) => {
     try {
-      const response = await axios.get(`/api/news?searchTerm=${encodeURIComponent(searchTerm)}&newPage=${newPage}`);
+      const URL = 'https://newsapi.org/v2/everything';
+      const API = process.env.REACT_APP_NEWS_API_KEY;
+      const query = `${URL}?apiKey=${API}&q=${encodeURIComponent(searchTerm)}&searchIn=title&sortBy=popularity&language=en&pageSize=20&page=${newPage}`;
+
+      const response = await axios.get(query);
       const articles = response.data.articles;
 
       if (articles.length > 0) {
