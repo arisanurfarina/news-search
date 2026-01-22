@@ -30,5 +30,3 @@ LOCAL STORAGE
 JAVASCRIPT JSON 
 1. convert from string to object: JSON.parse()
 2. convert into string: JSON.stringify()
-
-CUBA TRY TEST!
