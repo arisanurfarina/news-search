@@ -6,7 +6,7 @@ async function newsHandler(req, res) {
   //REACT_APP_NEWS_API_KEY
 
   const URL = 'https://newsapi.org/v2/everything';
-  const API = process.env.NEWS_API_KEY;
+  const API = process.env.REACT_APP_NEWS_API_KEY;
   const query = `${URL}?apiKey=${API}&q=${encodeURIComponent(searchTerm)}&searchIn=title&sortBy=popularity&language=en&pageSize=20&page=${newPage}`;
 
   try {
